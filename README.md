@@ -6,37 +6,51 @@ Pre-configured virtual machines for testing GovReady
 # What
 This repo launches two Linux vrtual machines for testing GovReady:
 - CentOS 6.5 64 bit (RedHat flavor)
-- Ubuntu 14.04 64 bit (Ubuntu flavor)
+- Ubuntu 12.04 64 bit (Ubuntu flavor)
 
 
 # How to use
-Clone this repo and use Vagrant to launch the test machines.
+### Step 1: Clone this repo and use Vagrant to launch the test machines.
+
+First time will take a while to download the vagrant boxes. (And I mean like an hour until the virtual boxes are migrated from AWS S3.) After that launching takes less than 4 minutes.
+
+The command line steps are:
+```
+git clone git@github.com:GovReady/testmachines.git
+cd testmachines
+vagrant up
+vagrant status
+```
+
+Executing from the command line looks like (`$` indicates prompt): 
 
 ```
 $ git clone git@github.com:GovReady/testmachines.git
 $ cd testmachines
 $ vagrant up
-
-$ # Sit back while vagrant boxes downloaded (first time only, takes more than an hour until I move vagrant boxes from S3)
-$ # Wait for vagrant to build (< 4 min)
-
 $ vagrant status
 Current machine states:
 
 centos65                  running (virtualbox)
 ubuntu12044               running (virtualbox)
-
 ```
 
-Now ssh into one or other vagrant box and install GovReady
+### Step 2: SSH into one or other vagrant box and install GovReady
 
+The command line steps are:
 ```
-# ssh into vagrant box
+vagrant ssh centos65
+
+# inside virtual machine
+curl -Lk https://raw.githubusercontent.com/GovReady/govready/master/install.sh | sudo bash
+```
+
+Executing from the command line looks like (`$` indicates prompt): 
+```
 $ vagrant ssh centos65
 
 Last login: Fri Jul 11 02:44:11 2014 from 10.0.2.2
 
-# Install GovReady
 [vagrant@vagrant ~]$ curl -Lk https://raw.githubusercontent.com/GovReady/govready/master/install.sh | sudo bash
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
