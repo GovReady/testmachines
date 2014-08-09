@@ -23,6 +23,8 @@ vagrant status
 ```
 
 
+
+
 Executing from the command line looks like (`$` indicates prompt): 
 
 ```
