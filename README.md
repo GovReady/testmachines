@@ -22,6 +22,7 @@ vagrant up
 vagrant status
 ```
 
+
 Executing from the command line looks like (`$` indicates prompt): 
 
 ```
@@ -44,6 +45,7 @@ vagrant ssh centos65
 # inside virtual machine
 curl -Lk https://raw.githubusercontent.com/GovReady/govready/master/install.sh | sudo bash
 ```
+
 
 Executing from the command line looks like (`$` indicates prompt): 
 ```
