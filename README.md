@@ -5,7 +5,7 @@ Pre-configured virtual machines for testing GovReady
 
 # What
 This repo launches two Linux vrtual machines for testing GovReady:
-- CentOS 6.5 64bit (RedHat flavor)
+- CentOS 6.5 64 bit (RedHat flavor)
 - Ubuntu 14.04 64 bit (Ubuntu flavor)
 
 
