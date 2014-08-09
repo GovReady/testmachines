@@ -8,8 +8,8 @@ Vagrant.configure("2") do |config|
 
   # Configure Centos 6.5 vm
   config.vm.define "centos65" do |centos65|
-    centos65.vm.box = "notgovready-centos-6.5-x86_64-noX-0.1.2"
-    centos65.vm.box_url = "https://s3.amazonaws.com/govready-assets/vm/notgovready-centos-6.5-x86_64-noX-0.1.2.box"
+    centos65.vm.box = "notgovready-centos-6.5-x86_64-noX-0.2.0"
+    centos65.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/notgovready-centos-6.5-x86_64-noX-0.2.0.box"
 
     # Fix for tty
     # config.ssh.pty
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   # Configure Ubuntu 12.04.04 vm
   config.vm.define "ubuntu12044" do |ubuntu12044|
     ubuntu12044.vm.box = "ubuntu12044-noX-0.1.1"
-    ubuntu12044.vm.box_url = "https://s3.amazonaws.com/govready-assets/vm/ubuntu12044-noX-0.1.1.box"
+    ubuntu12044.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/ubuntu12044-noX-0.1.1.box"
 
     # network config
     ubuntu12044.vm.network :private_network, ip: "192.168.56.103"

@@ -1,0 +1,6 @@
+SHA1(ubuntu12044-noX-0.1.1.box) = 58718572e1794ff4e763ceca879e9518001bd468
+MD5 (ubuntu12044-noX-0.1.1.box) = fd1c9ca7f8912a1dffa39063ea9e3e86
+SHA1(notgovready-centos-6.5-x86_64-noX-0.1.2.box)= 2db7544c7e57a163efb4f9be02a6ae5952002d62
+MD5 (notgovready-centos-6.5-x86_64-noX-0.1.2.box) = c0337ed4a4d061ab7fb875a45c0e06d7
+SHA1(notgovready-centos-6.5-x86_64-noX-0.2.0.box)= b93c6f6292f8b4893171408f1af900ca638bb313
+MD5 (notgovready-centos-6.5-x86_64-noX-0.2.0.box) = d2411b4225a88ced9f104f8cda2d6750
