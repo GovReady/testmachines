@@ -4,3 +4,5 @@ SHA1(notgovready-centos-6.5-x86_64-noX-0.1.2.box)= 2db7544c7e57a163efb4f9be02a6a
 MD5 (notgovready-centos-6.5-x86_64-noX-0.1.2.box) = c0337ed4a4d061ab7fb875a45c0e06d7
 SHA1(notgovready-centos-6.5-x86_64-noX-0.2.0.box)= b93c6f6292f8b4893171408f1af900ca638bb313
 MD5 (notgovready-centos-6.5-x86_64-noX-0.2.0.box) = d2411b4225a88ced9f104f8cda2d6750
+SHA1(vbmachine-notgovready-centos-6.5-x86_64-noX-0.2.1.box)= bcaca03e3672c30270977a0058290daf80d87e0f
+MD5 (vbmachine-notgovready-centos-6.5-x86_64-noX-0.2.1.box) = 8ac22bc904d80a871d7b1ed706e8f966

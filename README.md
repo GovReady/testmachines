@@ -12,7 +12,7 @@ This repo launches two Linux vrtual machines for testing GovReady:
 # How to use
 ### Step 1: Clone this repo and use Vagrant to launch the test machines.
 
-First time will take a while to download the vagrant boxes. (And I mean like an hour until the virtual boxes are migrated from AWS S3.) After that launching takes less than 4 minutes.
+First time will take 5 to 10 min to download each vagrant boxes. Launching takes less than a couple of minutes each.
 
 Executing from the command line looks like (`$` indicates prompt): 
 
