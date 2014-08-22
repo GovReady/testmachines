@@ -1,10 +1,11 @@
 TestMachines (for GovReady)
 ===========================
 
-Pre-configured virtual machines for testing GovReady
+Pre-configured virtual machines for testing GovReady (https://github.com/GovReady/govready)
 
 # What
 This repo launches two Linux vrtual machines for testing GovReady:
+- RHEL 6.4 64 bit (RedHat flavor)
 - CentOS 6.5 64 bit (RedHat flavor)
 - Ubuntu 12.04 64 bit (Ubuntu flavor)
 
@@ -23,6 +24,7 @@ $ vagrant up
 $ vagrant status
 Current machine states:
 
+redhat64                  running (virtualbox)
 centos65                  running (virtualbox)
 ubuntu12044               running (virtualbox)
 ```
@@ -35,7 +37,7 @@ $ vagrant ssh centos65
 
 Last login: Fri Jul 11 02:44:11 2014 from 10.0.2.2
 
-[vagrant@vagrant ~]$ curl -Lk https://raw.githubusercontent.com/GovReady/govready/master/install.sh | sudo bash
+[vagrant@vagrant ~]$ curl -Lk io.govready.org/install | sudo bash
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -46,9 +48,11 @@ Last login: Fri Jul 11 02:44:11 2014 from 10.0.2.2
 [INFO] Downloading and installing https://raw.githubusercontent.com/GovReady/govready/master/govreadycp
 [INFO] GovReady install succeeded.
 govready version
-0.1.0-dev
-[vagrant@vagrant ~]$
+0.4.2
+
 ```
+
+To try govready toolkit further, see: https://github.com/GovReady/govready
 
 # Templates
 `vbkick-templates` provides vbkick virtual machine configuration files for building VirtualBox VM's from source ISO and kick start files.
