@@ -1,17 +1,6 @@
 # notgovready-centos-6.5-x86_64-noX-0.2.0
 # this is comment
 # Note: scripts are exec in order defined here
-base.sh
-repos.sh
-sudo.sh
-virtualbox.sh
-#ruby.sh
-#ansible.sh
-#puppet.sh
-#chef.sh
-#cfengine.sh
-#rh_devtoolset.sh
-rh_software_collections.sh
-nfs.sh
-cleanup.sh
-zerodisk.sh
+test_sudo.sh
+test_virtualbox.sh
+test_vagrant.sh
