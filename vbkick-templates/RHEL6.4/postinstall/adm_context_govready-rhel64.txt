@@ -1,0 +1,10 @@
+# notgovready-centos-6.5-x86_64-noX-0.2.0
+# this is comment
+# Note: scripts are exec in order defined here
+sudo.sh
+virtualbox.sh
+base.sh
+repos.sh
+nfs.sh
+cleanup.sh
+zerodisk.sh

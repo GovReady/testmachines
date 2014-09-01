@@ -7,20 +7,39 @@ Vagrant.configure("2") do |config|
   # please see the online documentation at vagrantup.com.
 
   # Configure RedHat RHEL 6.4 vm
-  config.vm.define "rhel64" do |rhel64|
-    rhel64.vm.box = "notgovready-rhel6.4-web2"
-    rhel64.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/notgovready-rhel6.4-web2.box"
-
+  config.vm.define "rhel64web" do |rhel64web|
+    rhel64web.vm.box = "notgovready-rhel6.4-web"
+    rhel64web.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/rhel64-web-0.3.0.box"
+    
     # network config
-    rhel64.vm.network :private_network, ip: "192.168.56.101"
-    rhel64.vm.network :forwarded_port, guest: 80, host: 8081
-    rhel64.vm.network :forwarded_port, guest: 22, host: 2122, auto_correct: false,  d: "ssh"
+    rhel64web.vm.network :private_network, ip: "192.168.56.101"
+    rhel64web.vm.network :forwarded_port, guest: 80, host: 8081
+    rhel64web.vm.network :forwarded_port, guest: 22, host: 2122, auto_correct: false,  d: "ssh"
 
-    # Sync overall cloudstart directory on host machine with "/vagrant" directory on  uest machine
-    #rhel64.vm.synced_folder "../../", "/vagrant", group: "vagrant", owner:  vagrant", create: rue
+    # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
+    #rhel64web.vm.synced_folder "../../", "/vagrant", group: "vagrant", owner:  vagrant", create: true
 
     # Launch virtualbox GUI window
-    rhel64.vm.provider "virtualbox" do |v|
+    rhel64web.vm.provider "virtualbox" do |v|
+      v.gui = true
+    end
+  end
+
+  # Configure RedHat RHEL 6.4 vm db
+  config.vm.define "rhel64db" do |rhel64db|
+    rhel64db.vm.box = "notgovready-rhel6.4-db"
+    rhel64db.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/rhel64-db-0.3.0.box"
+
+    # network config
+    rhel64db.vm.network :private_network, ip: "192.168.56.104"
+    rhel64db.vm.network :forwarded_port, guest: 80, host: 8084
+    rhel64db.vm.network :forwarded_port, guest: 22, host: 2422, auto_correct: false,  d: "ssh"
+
+    # Sync overall cloudstart directory on host machine with "/vagrant" directory on  guest machine
+    rhel64db.vm.synced_folder "../../", "/vagrant", group: "vagrant", owner: "vagrant", create: true
+
+    # Launch virtualbox GUI window
+    rhel64db.vm.provider "virtualbox" do |v|
       v.gui = true
     end
   end
@@ -36,7 +55,7 @@ Vagrant.configure("2") do |config|
     centos65.vm.network :forwarded_port, guest: 22, host: 2322, auto_correct: false,  d: "ssh"
 
     # Sync overall cloudstart directory on host machine with "/vagrant" directory on  uest machine
-    #centos65.vm.synced_folder "../../", "/vagrant", group: "vagrant", owner:  vagrant", create: rue
+    #centos65.vm.synced_folder "../../", "/vagrant", group: "vagrant", owner:  "vagrant", create: rue
 
     # Launch virtualbox GUI window
     centos65.vm.provider "virtualbox" do |v|

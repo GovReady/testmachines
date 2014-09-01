@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "rhel6.4-web2"
-  config.vm.box_url = "file:///codedata/virtualmachines/vbkick-templates-forge-gitmachines/RHEL6/rhel6.4-web2.box"
+  config.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/rhel64-web-0.3.0.box"
   config.vm.hostname = "rhel6.4-web2"
 
   # Enable tty to work for sudo - see: https://github.com/smdahlen/vagrant-digitalocean/issues/100
