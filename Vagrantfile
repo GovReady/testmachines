@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     # network config
     rhel64web.vm.network :private_network, ip: "192.168.56.101"
     rhel64web.vm.network :forwarded_port, guest: 80, host: 8081
-    rhel64web.vm.network :forwarded_port, guest: 22, host: 2122, auto_correct: false,  d: "ssh"
+    rhel64web.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2122, auto_correct: false,  d: "ssh"
 
     # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
     rhel64web.vm.synced_folder ".", "/vagrant", group: "vagrant", owner: "vagrant", create: true
@@ -31,9 +31,11 @@ Vagrant.configure("2") do |config|
     rhel64db.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/rhel64-db-0.3.1.box"
 
     # network config
+    # NOTE: It is critical to include `id: 'ssh'` parameter when referring to host 2222 with multiple hosts. 
+    #       See: https://github.com/mitchellh/vagrant/issues/1541#issuecomment-17315713
     rhel64db.vm.network :private_network, ip: "192.168.56.104"
     rhel64db.vm.network :forwarded_port, guest: 80, host: 8082
-    rhel64db.vm.network :forwarded_port, guest: 22, host: 2222, auto_correct: false,  d: "ssh"
+    rhel64db.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2222, auto_correct: false,  d: "ssh"
 
     # Sync overall cloudstart directory on host machine with "/vagrant" directory on  guest machine
     rhel64db.vm.synced_folder ".", "/vagrant", group: "vagrant", owner: "vagrant", create: true
@@ -52,7 +54,7 @@ Vagrant.configure("2") do |config|
     # network config
     centos65.vm.network :private_network, ip: "192.168.56.102"
     centos65.vm.network :forwarded_port, guest: 80, host: 8083
-    centos65.vm.network :forwarded_port, guest: 22, host: 2322, auto_correct: false,  d: "ssh"
+    centos65.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2322, auto_correct: false,  d: "ssh"
 
     # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
     centos65.vm.synced_folder ".", "/vagrant", group: "vagrant", owner: "vagrant", create: true
@@ -71,7 +73,7 @@ Vagrant.configure("2") do |config|
     # network config
     ubuntu12044.vm.network :private_network, ip: "192.168.56.103"
     ubuntu12044.vm.network :forwarded_port, guest: 80, host: 8084
-    ubuntu12044.vm.network :forwarded_port, guest: 22, host: 2422, auto_correct: false, id: "ssh"
+    ubuntu12044.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2422, auto_correct: false, id: "ssh"
 
     # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
     ubuntu12044.vm.synced_folder ".", "/vagrant", group: "vagrant", owner: "vagrant", create: true  
