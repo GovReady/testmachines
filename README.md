@@ -11,28 +11,46 @@ This repo launches three Linux vrtual machines for testing GovReady:
 
 
 # How to use
-### Step 1: Clone this repo and use Vagrant to launch the test machines.
-
-First time will take 5 to 10 min to download each vagrant boxes. Launching takes less than a couple of minutes each.
+### Step 1: Clone this repo and change into directory of cloned repo
 
 Executing from the command line looks like (`$` indicates prompt): 
 
 ```
 $ git clone git@github.com:GovReady/testmachines.git
 $ cd testmachines
-$ vagrant up
+
+```
+
+### Step 2: Use Vagrant to launch one (or more) of the test virtual machines.
+
+There are at least four vm's to choose between. Use 'vagrant status` for list.
+
+First 'vagrant up <vm_name>` for a vm takes 5 to 10 min to download the vagrant box. 
+Launching takes less than a couple of minutes each box.
+
+Executing from the command line looks like (`$` indicates prompt): 
+
+```
 $ vagrant status
 Current machine states:
 
-redhat64                  running (virtualbox)
-centos65                  running (virtualbox)
-ubuntu12044               running (virtualbox)
+rhel64web                 not created (virtualbox)
+rhel64db                  not created (virtualbox)
+centos65                  not created (virtualbox)
+ubuntu12044               not created (virtualbox)
 
-# destroy virtual machines
-vagrant destroy -f
+$ vagrant up centos65
+...
+centos65: Booting VM...
+centos65: Waiting for machine to boot. This may take a few minutes...
+centos65: SSH address: 127.0.0.1:2322
+centos65: SSH username: vagrant
+centos65: SSH auth method: private key
+centos65: Machine booted and ready!
+
 ```
 
-### Step 2: SSH into one or other vagrant box and install GovReady
+### Step 3: SSH into one or other vagrant box and install GovReady
 
 Executing from the command line looks like (`$` indicates prompt): 
 ```
@@ -55,17 +73,7 @@ govready version
 
 ```
 
-To launch just one of the virtual machines:
-```
-# launch
-vagrant up centos65
 
-# ssh in
-vagrant ssh centos65
-
-# destroy
-vagrant destroy centos65
-```
 
 To try govready toolkit further, see: https://github.com/GovReady/govready
 
