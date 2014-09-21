@@ -4,8 +4,9 @@ TestMachines (for GovReady)
 Pre-configured virtual machines for testing GovReady (https://github.com/GovReady/govready)
 
 # What
-This repo launches three Linux vrtual machines for testing GovReady:
-- RHEL 6.4 64 bit (RedHat flavor)
+This repo contains vagrant virtual machines of Linux computers for testing GovReady:
+- RHEL 6.4 64 bit web server (RedHat flavor)
+- RHEL 6.4 64 bit database server (RedHat flavor)
 - CentOS 6.5 64 bit (RedHat flavor)
 - Ubuntu 12.04 64 bit (Ubuntu flavor)
 
