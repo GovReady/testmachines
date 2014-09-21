@@ -5,10 +5,10 @@ Pre-configured virtual machines for testing GovReady (https://github.com/GovRead
 
 # What
 This repo contains vagrant virtual machines of Linux computers for testing GovReady:
-- RHEL 6.4 64 bit web server (RedHat flavor)
-- RHEL 6.4 64 bit database server (RedHat flavor)
-- CentOS 6.5 64 bit (RedHat flavor)
-- Ubuntu 12.04 64 bit (Ubuntu flavor)
+- RHEL 6.4 64 bit web server build
+- RHEL 6.4 64 bit database server build
+- CentOS 6.5 64 bit
+- Ubuntu 12.04 64 bit
 
 
 # How to use
