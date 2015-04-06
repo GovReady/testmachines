@@ -103,5 +103,24 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  # Configure Ubuntu 14.04.02 vm
+  config.vm.define "ubuntu14042" do |ubuntu14042|
+    ubuntu14042.vm.box = "ubuntu14042-noX-0.1.0"
+    ubuntu14042.vm.box_url = "https://a7240500425256e5d77a-9064bd741f55664f44e550bdad2949f9.ssl.cf5.rackcdn.com/vbmachine-notgovready-ubuntu-14.04-x86_64-noX-0.1.0.box"
+
+    # network config
+    ubuntu14042.vm.network :private_network, ip: "192.168.56.113"
+    ubuntu14042.vm.network :forwarded_port, guest: 80, host: 8084
+    ubuntu14042.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2422, auto_correct: false, id: "ssh"
+
+    # Sync overall cloudstart directory on host machine with "/vagrant" directory on guest machine
+    ubuntu14042.vm.synced_folder ".", "/vagrant", group: "vagrant", owner: "vagrant", create: true  
+
+    # Launch virtualbox GUI window
+    ubuntu14042.vm.provider "virtualbox" do |v|
+      v.gui = true
+    end
+  end
+
 end
 

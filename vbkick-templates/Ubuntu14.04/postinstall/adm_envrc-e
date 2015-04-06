@@ -1,0 +1,2 @@
+VBOX_VERSION="4.3.24"
+export VBOX_VERSION
